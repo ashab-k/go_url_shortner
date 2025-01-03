@@ -1,0 +1,12 @@
+{{template "base" . }}
+
+{{define "body"}}
+<div>
+ <div>
+  <form action="/shorten" method="POST">
+    <input type="text" name="url" placeholder="Enter the Url to shorten">
+        <input type="submit" value="shorten">
+    </form>
+ </div>
+</div>
+{{end}}
