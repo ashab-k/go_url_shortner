@@ -76,7 +76,7 @@ func (app *application)shorten(w http.ResponseWriter , r *http.Request) {
 
     }
 	log.Println(randString)
-    app.session.Put(r , "Flash" , fmt.Sprintf("http://localhost:5050/%v" , randString))
+    app.session.Put(r , "flash" , fmt.Sprintf("http://localhost:5050/%v" , randString))
     http.Redirect(w , r , "/shorten" , http.StatusSeeOther)
 }
 
@@ -86,6 +86,8 @@ func (app *application)showShortenLink(w http.ResponseWriter , r *http.Request){
         "./ui/html/shorten.page.tmpl", 
         "./ui/html/base.layout.tmpl",
     }
+
+
 
     app.render(w , r , files , nil)
 }

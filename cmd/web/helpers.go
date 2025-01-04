@@ -17,7 +17,7 @@ func (app *application)render(w http.ResponseWriter , r *http.Request , files []
 
 	td.Flash = app.session.PopString(r , "flash")
 
-    err = tmpl.Execute(w  , nil )
+    err = tmpl.Execute(w  , td)
     if err != nil {
         http.Error(w  , err.Error() , http.StatusInternalServerError)
     }
