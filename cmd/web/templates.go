@@ -1,6 +1,5 @@
 package main
 
-type templateData struct {
-	url string 
+type templateData struct { 
 	Flash string
 }
