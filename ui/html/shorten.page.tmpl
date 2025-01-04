@@ -3,7 +3,10 @@
 {{define "body"}}
 <div>
  <div>
-    <textarea name="shortLink" id="">http://dflsdwosdf</textarea>
+    {{with .Flash}}
+    <textarea name="shortLink" id="">{{.}}</textarea>
+    {{end}}
+    <div>bruh</div>
  </div>
 </div>
 {{end}}
