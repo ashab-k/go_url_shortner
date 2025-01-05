@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/joho/godotenv"
 )
@@ -66,7 +67,7 @@ func (app *application)shorten(w http.ResponseWriter , r *http.Request) {
             randString = String(5)
             continue
         }else{
-             err := rdb.Set(ctx , randString , url , 0).Err()
+             err := rdb.Set(ctx , randString , url , 24 * time.Hour).Err()
             if err != nil {
                 log.Println("Database Error 2")
                 return
