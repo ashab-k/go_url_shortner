@@ -1,12 +1,14 @@
 {{template "base" . }}
 
 {{define "body"}}
-<div>
- <div>
-    {{with .Flash}}
-    <div name="shortLink" id="">{{.}}</div>
-    {{end}}
-    <div>bruh</div>
- </div>
+<div class="flash-page flex-center">
+    <div class="flash-container">
+        {{with .Flash}}
+        <div class="flash-message-container">
+            <div class="flash-message" id="shortLink">{{.}}</div>
+            <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+        </div>
+        {{end}}       
+    </div>
 </div>
 {{end}}

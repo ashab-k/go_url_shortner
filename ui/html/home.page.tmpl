@@ -1,12 +1,19 @@
 {{template "base" . }}
 
 {{define "body"}}
-<div>
- <div>
-  <form action="/shorten" method="POST">
-    <input type="text" name="url" placeholder="Enter the Url to shorten">
-        <input type="submit" value="shorten">
-    </form>
- </div>
+<div class="shortener-page flex-center">
+    <div class="shortener-container">
+        <form action="/shorten" method="POST" class="shortener-form">
+            <input 
+                type="text" 
+                name="url" 
+                placeholder="Enter the URL to shorten" 
+                class="shortener-input">
+            <input 
+                type="submit" 
+                value="Shorten" 
+                class="shortener-button">
+        </form>
+    </div>
 </div>
 {{end}}
